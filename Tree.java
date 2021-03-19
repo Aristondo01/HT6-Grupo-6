@@ -1,32 +1,32 @@
-import java.util.HashMap;
+import java.util.TreeMap;
 
 public class Tree implements Map
 {
-  public TreeMap<<T>,<T>> Mapa;
+  public TreeMap<Object,Object> Mapa;
 
   public Tree()
   {
-    Mapa = TreeMap<<T>,<T>>();
+    Mapa = new TreeMap<Object,Object>();
   }
 
-  public void agregar(<?> key,<?>ingresar)
+  public void agregar(Object key,Object ingresar)
   {
-    Mapa.input(key,ingresar);
+    Mapa.put(key,ingresar);
   }
 
-  public <T> obtener(<T> key)
+  public Object obtener(Object key)
   {
-    Mapa.get(key);
+    return Mapa.get(key);
   }
 
-  public void quitar(<T> key)
+  public void quitar(Object key)
   {
     Mapa.remove(key);
   }
 
   public int tamaño()
   {
-    Mapa.size();
+    return Mapa.size();
   }
 
 }

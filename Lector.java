@@ -4,6 +4,13 @@ public class Lector
   {
 
   }
+/*
+  public Map LeerArchivo(int op)
+  {
 
-  
+    
+    return 
+  }
+
+*/  
 }

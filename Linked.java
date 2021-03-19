@@ -2,31 +2,31 @@ import java.util.LinkedHashMap;
 
 public class Linked implements Map
 {
-  public  LinkedHashMap<<T>,<T>> Mapa;
+  public  LinkedHashMap<Object ,Object > Mapa;
 
   public Linked()
   {
-    Mapa =  LinkedHashMap<<T>,<T>>();
+    Mapa =new  LinkedHashMap<Object, Object>();
   }
 
-  public void agregar(<T> key,<T>ingresar)
+  public void agregar(Object  key,Object ingresar)
   {
-    Mapa.input(key,ingresar);
+    Mapa.put(key,ingresar);
   }
 
-  public <T> obtener(<T> key)
+  public Object  obtener(Object  key)
   {
-    Mapa.get(key);
+    return Mapa.get(key);
   }
 
-  public void quitar(<T> key)
+  public void quitar(Object  key)
   {
     Mapa.remove(key);
   }
 
   public int tamaño()
   {
-    Mapa.size();
+    return Mapa.size();
   }
 
 }

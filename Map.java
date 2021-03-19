@@ -1,10 +1,10 @@
 public interface Map
 {
-  public void agregar(<T> key,<T>ingresar);
+  public void agregar(Object key,Object ingresar);
 
-  public <T> obtener(<T> key);
+  public Object obtener(Object key);
 
-  public void quitar(<T> key);
+  public void quitar(Object key);
 
   public int tamaño();
 
