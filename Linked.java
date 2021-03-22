@@ -24,9 +24,13 @@ public class Linked implements Map
     Mapa.remove(key);
   }
 
-  public int tamaño()
+  public int tamano()
   {
     return Mapa.size();
+  }
+  public void imprimir()
+  {
+    System.out.println(Mapa);
   }
 
 }

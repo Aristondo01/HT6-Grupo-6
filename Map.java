@@ -6,6 +6,8 @@ public interface Map
 
   public void quitar(Object key);
 
-  public int tamaño();
+  public int tamano();
+  
+  public void imprimir();
 
 }
