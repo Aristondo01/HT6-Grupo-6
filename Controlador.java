@@ -5,12 +5,14 @@ public class Controlador
   Lector leer;
   Map Baraja,jugador;
   Factory fabrica;
+  Ordenar ordenar;
   
   Controlador()
   {
     scan = new Scanner(System.in);
     leer=new Lector();
     fabrica= new Factory();
+    ordenar= new Ordenar();
   }
 
   
@@ -42,7 +44,7 @@ public class Controlador
     Baraja=fabrica.crear(op);
 
     Baraja=leer.LeerArchivo(Baraja);
-    jugador.imprimir();
+    
     while(true)
     {
       System.out.println("1)Agregar carta a baraja de jugador");
@@ -61,14 +63,58 @@ public class Controlador
           String agregando = scan.nextLine();
           if(Baraja.obtener(agregando)==null){
             System.out.println("\nERROR... No se encuentra la carta\n");
-          }else{
+          }else if(jugador.obtener(agregando)==null){
             System.out.println("\nEstamos agregando tu carta a tu baraja...\n");
             jugador.agregar(agregando,Baraja.obtener(agregando));
-            Baraja.quitar(agregando);
+          }else{
+            System.out.println("Ya tienes esta carta!\n");
           }
           jugador.imprimir();
           break;
 
+        case 2:
+          System.out.println("\nopcion: "+opcion+"\n");
+          System.out.println("Ingresa el nombre de la carta de la cual deseas obtener su tipo");
+          String llave = scan.nextLine();
+
+          if(Baraja.obtener(llave)==null){
+            System.out.println("\nERROR... No se encuentra la carta\n");
+          }else{
+            System.out.println("\nEl tipo de la carta... "+llave+" es:");
+            System.out.println(Baraja.obtener(llave)+"\n");
+          }
+          break;
+        case 3:
+          System.out.println("\nopcion: "+opcion+"\n");
+          System.out.println("Mostrando, nombre, tipo y cantidad de cada carta que el jugador posee en su baraja\n");
+          if(jugador.tamano()<1){System.out.println("Tu baraja no tiene nada!!!! Agrega cartas con la opcion 1\n");
+          }
+          else{
+            jugador.imprimir();
+            System.out.println();
+          }  
+          break;
+        case 4:
+          System.out.println("\nopcion: "+opcion+"\n");
+          
+          ordenar.sortvalue(jugador);
+          
+          break;
+        case 5:
+          System.out.println("\nopcion: "+opcion+"\n");
+          System.out.println("Mostrando, nombre, tipo y cantidad de cada carta que el jugador posee en su baraja\n");
+          Baraja.imprimir();
+          System.out.println();
+      
+          break;
+        case 6:
+          System.out.println("\nopcion: "+opcion+"\n");
+          
+          ordenar.sortvalue(Baraja);
+          
+
+          
+          break;
         default:
           System.out.println("Esto no es una opcion, porfavor intenta de nuevo.");
 

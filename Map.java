@@ -1,3 +1,4 @@
+import java.util.Set;
 public interface Map
 {
   public void agregar(Object key,Object ingresar);
@@ -9,5 +10,7 @@ public interface Map
   public int tamano();
   
   public void imprimir();
+
+  public Set<Object> getKeys();
 
 }

@@ -1,5 +1,5 @@
 import java.util.HashMap;
-
+import java.util.Set;
 public class Hash implements Map
 {
   public HashMap<Object,Object> Mapa;
@@ -19,6 +19,12 @@ public class Hash implements Map
     return Mapa.get(key);
   }
 
+  public Set<Object> getKeys()
+  {
+    Set<Object> keys = Mapa.keySet();
+    return keys;
+  }
+
   public void quitar(Object key)
   {
     Mapa.remove(key);
@@ -28,9 +34,33 @@ public class Hash implements Map
   {
     return Mapa.size();
   }
-  public void imprimir()
+   public void imprimir()
   {
-    System.out.println(Mapa);
+    Object hech = "hechizo";
+    Object mons = "monstruo";
+    Object tramp = "trampa";
+    int trampas = 0;
+    int hechizos = 0;
+    int monstruos = 0;
+    Set<Object> keys = Mapa.keySet();
+    for(Object i :keys)
+    {
+      System.out.println(i + " : "+Mapa.get(i));
+      if(Mapa.get(i).equals(hech)){
+        hechizos++;
+      }else if(Mapa.get(i).equals(mons)){
+        monstruos++;
+
+      }else if(Mapa.get(i).equals(tramp)){
+        trampas++;
+      }
+    }
+    System.out.println();
+    System.out.println("Monstros = "+monstruos);
+    System.out.println("Hechizos = "+hechizos);
+    System.out.println("Trampas = "+trampas);
+    System.out.println();
   }
+
 
 }
