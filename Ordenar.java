@@ -32,7 +32,7 @@ public class Ordenar
       temp[j] = tempo;  
       }  
     }  
-  }  
+  }
 
   for(String Carta: temp)
     {
